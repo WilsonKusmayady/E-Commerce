@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="login-footer">
         <p>Don't have account?
           <span>
-            <a href="">click here..</a>
+            <a href="/Register/register.php">click here..</a>
           </span>
         </p>
       </div>

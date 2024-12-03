@@ -7,7 +7,7 @@ $dbUser = "postgres";     // Username database
 $dbPassword = "456287";   // Password untuk koneksi database
 
 // Handle form submission
-$message = "";
+$message = ""; // Pesan untuk ditampilkan di bawah form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"] ?? "";
     $email = $_POST["email"] ?? "";
@@ -43,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
 
         // Tampilkan pesan sukses
-        echo "Registrasi berhasil";
-        exit; // Pastikan tidak ada output tambahan
+        $message = "Registrasi berhasil!";
     } catch (PDOException $e) {
         $message = "Error: " . $e->getMessage();
     }
@@ -67,12 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="register-header">
         <h3>Register</h3>
         <div class="login-footer">
-        <p>Create your account Already have?
-          <span>
-            <a href="/Login/login.php">click here..</a>
-          </span>
-        </p>
-      </div>
+          <p>Create your account Already have?
+            <span>
+              <a href="/Login/login.php">click here..</a>
+            </span>
+          </p>
+        </div>
       </div>
       <form method="POST" action="">
         <div class="register-group">
@@ -103,6 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </button>
         </div>
       </form>
+      <?php if (!empty($message)): ?>
+      <div class="register-message">
+        <p><?php echo htmlspecialchars($message); ?></p>
+      </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>

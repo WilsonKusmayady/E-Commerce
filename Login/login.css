@@ -169,3 +169,18 @@ input:focus{
     justify-content: center;
     align-items: center;
 }
+
+.login-message {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #4caf50; /* Hijau untuk sukses */
+    color: #4caf50;
+    background-color: #e8f5e9; /* Warna latar hijau muda */
+    border-radius: 5px;
+    text-align: center;
+}
+.login-message.error {
+    border-color: #f44336; /* Merah untuk kesalahan */
+    color: #f44336;
+    background-color: #ffebee; /* Warna latar merah muda */
+}

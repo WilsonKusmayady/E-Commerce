@@ -79,8 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </p>
       </div>
       <!-- Menampilkan pesan -->
-      <?php if ($message): ?>
-        <p style="color: red; text-align: center;"><?php echo htmlspecialchars($message); ?></p>
+      <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($message)): ?>
+      <div class="login-message">
+        <p><?php echo htmlspecialchars($message); ?></p>
+      </div>
       <?php endif; ?>
     </div>
   </div>

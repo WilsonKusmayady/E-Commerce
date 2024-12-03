@@ -66,7 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="register-inner">
       <div class="register-header">
         <h3>Register</h3>
-        <p>Create your account</p>
+        <div class="login-footer">
+        <p>Create your account Already have?
+          <span>
+            <a href="/Login/login.php">click here..</a>
+          </span>
+        </p>
+      </div>
       </div>
       <form method="POST" action="">
         <div class="register-group">
